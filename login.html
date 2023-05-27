@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="signin.css">
+</head>
+<header>
+    <nav class="scroll-navbar">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo">
+      </div>
+        <div class="left-section">
+            <a href="home.html">Home</a>
+            <a href="home.html #services">Services</a>
+            <a href="#">About Us</a>
+            
+          </div>
+         
+        </nav>
+</header>
+<body>
+
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form class="login-form">
+        <input type="email" name="email" id="email" placeholder="Enter your email">
+        <input type="password" name="password" id="password" placeholder="Create a password">
+        <a href="#">Forgot password?</a>
+        <button type="submit" class="button">Login</button>
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Signup</header>
+      <form action="#">
+        <input type="email" name="email" placeholder="Enter your email">
+        <input type="password" name="password" placeholder="Create a password">
+        <input type="password" name="cpassword" placeholder="Confirm your password">
+        <input type="button" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background:  rgb(244, 242, 240);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(back1.jpg);
+
+  }
+  
+  .scroll-navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(244, 242, 240);
+    color: #fff;
+    padding: 5px;
+  }
+  .logo img {
+    width: 90px;
+    height: 90px;
+    justify-content: left;
+}
+  .scroll-navbar a {
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+  }
+.container{
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  transform: translate(-50%,-50%);
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input, .button{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form .button{
+  color: #050404;
+  background: rgb(244, 242, 240);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form .button:hover{
+  background: red;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: red;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+</style>
+<script>
+  const form = document.querySelector('.login-form')
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const { email, password } = e.target
+    if(!email.value || !password.value) {
+      return
+    }
+    fetch('http://localhost:4000/auth/login', {
+      method: 'post',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value
+      })
+    })
+    .then(res => {
+      window.location.replace('logsign.html')
+    })
+    .catch(err => console.log(err))
+  })
+</script>

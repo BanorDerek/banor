@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="inside.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ </head>
+ 
+    <body>
+      <div class="navbar">
+      <a href="home.html">Home</a>
+      <a href="home.html #services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#gallery">Gallery</a>
+      <div class="dropdown">
+        <button class="dropbtn">Looking for Blood</button>
+        <div class="dropdown-content">
+          <a href="#blood-type-a">Blood Availability</a>
+          <a href="#blood-type-b">Blood Bank directory</a>
+         
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Want to Donate Blood</button>
+        <div class="dropdown-content">
+          <a href="camps.html">Blood Donation Camps</a>
+          <a href="aboutblood.html">About Blood Donation</a>
+       
+        </div>
+      </div>
+    </div>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="main2.jpg" alt="Image">
+      </div>
+      <div class="slide">
+        <img src="main1.jpg" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="image3.jpg" alt="Image 3">
+      </div>
+    </div>
+  
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      var slides = document.querySelectorAll('.slide');
+      var currentSlide = 0;
+    
+      function showSlide(slideIndex) {
+        slides[currentSlide].classList.remove('active');
+        slides[slideIndex].classList.add('active');
+        currentSlide = slideIndex;
+      }
+    
+      function nextSlide() {
+        var nextSlideIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextSlideIndex);
+      }
+    
+      setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    });
+    </script>
+    
+
+  <title>Eligibility Criteria: Alphabetical</title>
+</head>
+<body>
+  <h1>Eligibility Criteria: Alphabetical</h1>
+  <p>Select the title or plus symbol below to view content. You may also search eligibility topics by keyword.</p>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Eligibility Criteria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="expandable-row">
+        <td>
+          Acupuncture
+          <span class="expandable-sign">+</span>
+          <div class="expandable-content">Donors who have undergone acupuncture treatments are acceptable.</div>
+        </td>
+      </tr>
+      <tr class="expandable-row">
+        <td>
+          Age
+          <span class="expandable-sign">+</span>
+          <div class="expandable-content">
+            <br>You must be at least 17 years old to donate to 
+            the general blood supply, or 16 years old with 
+            parental/guardian consent, if allowed by state law.
+             There is no upper age limit for blood donation as 
+             long as you are well with no restrictions or 
+             limitations to your activities.
+            In-Depth Discussion of Age and Blood Donation
+            Those younger than age 17 are almost always legal minors
+            (not yet of the age of majority) who cannot give 
+            consent by themselves to donate blood. (Each state 
+            determines its own age of majority, which can be
+            different for different activities.)Persons under 
+            the age of 17 may, however, donate blood for their own use,
+            in advance of scheduled surgery or in situations 
+            where their blood has special medical value for a 
+            particular patient such as a family member.</div>
+        </td>
+      </tr>
+      <tr class="expandable-row">
+        <td>
+          Allergy, Stuffy Nose, Itchy Eyes, Dry Cough
+          <span class="expandable-sign">+</span>
+          <div class="expandable-content">Acceptable as long as you feel well,
+             have no fever, and have no problems breathing through your mouth.</div>
+        </td>
+        <tr class="expandable-row">
+          <td>
+            Antibiotics
+            <span class="expandable-sign">+</span>
+            <div class="expandable-content">
+              A donor with an acute infection can not donate.
+              The reason for antibiotic use must be evaluated to
+              determine if the donor has a bacterial infection 
+              that could be transmissible by blood. 
+              Acceptable after finishing oral antibiotics for an 
+              infection (bacterial or viral). Can have taken last 
+              pill on the date of donation. Antibiotic by injection 
+              for an infection acceptable 10 days after last injection.
+               Acceptable if you are taking antibiotics to prevent 
+               an infection for the following reasons: acne, chronic
+              prostatitis, peptic ulcer disease, periodontal disease, 
+              pre-dental work, rosacea, ulcerative colitis, after a 
+              splenectomy or valvular heart disease. If you have a 
+              temperature above 99.5 F, you can not donate.</div>
+          </td>
+          <tr class="expandable-row">
+          <td>
+            Aspirin
+            <span class="expandable-sign">+</span>
+            <div class="expandable-content">Aspirin, no waiting period for donating whole blood. However, you must wait 2 full days after taking aspirin or any medication containing aspirin before donating platelets by apheresis. For example, if you take aspirin products on Monday, the soonest you can donate platelets is Thursday.
+            </td>
+            </tbody>
+
+  </table>
+  
+  <script>
+    // Function to handle the click event on the expandable sign
+    function handleExpandableClick() {
+      const content = this.parentNode.querySelector('.expandable-content');
+      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+    
+    // Add click event listeners to all expandable signs
+    const expandableSigns = document.querySelectorAll('.expandable-sign');
+    expandableSigns.forEach(sign => {
+      sign.addEventListener('click', handleExpandableClick);
+    });
+  </script>
+</body>
+</html>
+<style>
+  .navbar {
+overflow: hidden;
+background-color: #eceaea;
+}
+
+.navbar a {
+float: left;
+color: rgb(8, 8, 8);
+text-align: center;
+padding: 20px 20px;
+text-decoration: none;
+}
+
+.dropdown {
+float: right;
+overflow: hidden;
+}
+
+.dropdown .dropbtn {
+font-size: 16px;
+border: none;
+outline: none;
+color: rgb(9, 4, 4);
+padding: 14px 16px;
+margin-right: 20px;
+background-color: inherit;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: #ddd;
+color: black;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.slide.active {
+  opacity: 1;
+}
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table td {
+    padding: 10px;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .expandable-content {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+  
+  .expandable-row:hover .expandable-content {
+    display: block;
+  }
+  
+  .expandable-sign {
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+</style>

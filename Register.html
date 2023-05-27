@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<header>
+    <nav class="scroll-navbar">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo">
+      </div>
+        <div class="left-section">
+            <a href="home.html">Home</a>
+            <a href="home.html #services">Services</a>
+            <a href="#">About Us</a>
+           
+          </div>
+         
+        </nav>
+</header>
+
+<section>
+  <h1>Blood Bank Details</h1>
+</section>
+<div class="signinform">
+
+  <form class="form">
+      <input type="email" name="email" placeholder="Enter your email">
+      <input type="password" name="password" placeholder="Enter your password">
+
+  
+
+<section>
+  <div class="container">
+    <div class="tab-bar">
+      <button class="tab active" onclick="openTab(event, 'bloodBankInfo')">Blood Bank Information</button>
+      
+    </div>
+    <div class="tab-content" id="bloodBankInfo">
+      <div class="content-container">
+        <h2>Blood Bank Address</h2>
+      </div>
+      <div class="container1">
+        <div class="select-container">
+          <label for="state">Select Region:</label>
+            <select id="state" name="region" class="select-dropdown">
+                <option value="all">All Regions</option>
+                <option value="Greater-Accra">Greater Accra</option>
+                <option value="volta">volta</option>
+                <option value="Ashanti">Ashanti</option>
+                <option value="Central">Central</option>
+              >
+          </select>
+        </div>
+        <div class="select-container">
+          <label for="district">Select District:</label>
+            <select name="district" id="district" class="select-dropdown">
+                <option value="all">All Districts</option>
+                <option value="Ablekuma-Central-Municipal">Ablekuma Central Municipal</option>
+                <option value="Korle-Klottey-Municipal">Korle-Klottey Municipal</option>
+                <option value="Ablekuma-Central-Municipal">Ablekuma Central Municipal</option>
+                <option value="Adaklu-Anyigbe">Adaklu Anyigbe</option>
+                <option value="North-Tongu">North Tongu</option>
+                <option value="Adansi-North">Adansi North</option>
+                <option value="Kumasi-Metropolitan">Kumasi Metropolitan</option>
+                <option value="CapeCoast-Metropolitan-Assembly">Cape Coast Metropolitan Assembly</option>
+                <option value="Gomoa-District">Gomoa District</option>
+          </select>
+        </div>
+      </div>
+      <section>
+        <div class="container">
+          <div class="tab-bar">
+            <!-- Tab buttons -->
+          </div>
+          <div class="tab-content" id="bloodBankInfo">
+            <div class="content-container">
+              <h2>Blood Bank Details</h2>
+              <div class="form-container">
+                <div class="form-column">
+                  <label for="bloodBankName">Blood Bank Name:</label>
+                  <input type="text" id="bloodBankName" name="bloodBankName">
+                  <label for="parentHospital">Parent Hospital:</label>
+                  <input type="text" id="parentHospital" name="parentHospital">
+                  <label for="shortName">Short Name:</label>
+                  <input type="text" id="shortName" name="shortName">
+                  <label for="category">Category:</label>
+                  <div class="select-container">
+                    <select id="category" class="select-dropdown">
+                      <option value="category1">Category 1</option>
+                      <option value="category2">Category 2</option>
+                      <option value="category3">Category 3</option>
+                      <!-- Add more categories here -->
+                    </select>
+                  </div>
+                  <label for="contactPersons">Contact Persons:</label>
+                  <input type="text" id="contactPersons" name="contactPersons">
+                </div>
+                <div class="form-column">
+                  <label for="contact">Contact No:</label>
+                  <input type="tel" id="contact" name="contact">
+                  <label for="faxNo">Fax No:</label>
+                  <input type="tel" id="faxNo" name="faxNo">
+                  <label for="licenceNo">Licence No
+
+:</label>
+                  <input type="text" id="licenceNo" name="licenceNo">
+                  <label for="fromDate">From Date:</label>
+                  <input type="date" id="fromDate" name="fromDate">
+                  <label for="toDate">To Date:</label>
+                  <input type="date" id="toDate" name="toDate">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="bloodBankInfo">
+            <div class="content-container">
+              <h2>Postal Address</h2>
+              <div class="form-container">
+                <div class="form-column">
+                  <label for="address1">Address 1:</label>
+                  <input type="text" id="address1" name="address1">
+                  <label for="address2">Address 2:</label>
+                  <input type="text" id="address2" name="address2">
+                  <label for="pincode">Pincode:</label>
+                  <input type="text" id="pincode" name="pincode">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content" id="bloodBankInfo">
+            <div class="content-container">
+              <h2>Other Details</h2>
+              <div class="form-container">
+                <div class="form-column">
+                  <label for="website">Website:</label>
+                  <input type="text" id="website" name="website">
+                  <label for="noOfBeds">No of Beds:</label>
+                  <input type="text" id="noOfBeds" name="noOfBeds">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab active" onclick="openTab(event, 'bloodBankInfo')">Donation Information</button>
+      </div>
+          <div class="tab-content" id="bloodBankInfo">
+          <div class="content-container">
+            <h2>Donation Type</h2>
+            <div class="checkbox-container">
+              <input type="checkbox" id="voluntary" name="donationType" value="voluntary">
+              <label for="voluntary">Voluntary</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacement" name="donationType" value="replacement">
+              <label for="replacement">Replacement</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="directed" name="donationType" value="directed">
+              <label for="directed">Directed</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="autologous" name="donationType" value="autologous">
+              <label for="autologous">Autologous</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="family" name="donationType" value="family">
+              <label for="family">Family</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="donationType" value="replacementExternal">
+              <label for="replacementExternal">Replacement External</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>Componenet Type</h2>
+            <div class="checkbox-container">
+              <input type="checkbox" id="voluntary" name="component Type" value="voluntary">
+              <label for="voluntary">Cryo Poor Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacement" name="component Type" value="replacement">
+              <label for="replacement"> Cryoprecipitate</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="directed" name="component Type" value="directed">
+              <label for="directed"> Fresh Frozen Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="autologous" name="componentType" value="autologous">
+              <label for="autologous"> Irradiated RBC</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="family" name="componentType" value="family">
+              <label for="family">Leukoreduced Rbc</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Packed Red Blood Cells</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Platelet Concentrate</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Platelet Poor Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Platelet Rich Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Platelets additive solutions</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Random Donor Platelets</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Sagm Packed Red Blood Cells</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Single Donor Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Single Donor Platelet</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Whole Blood</label>
+            </div>
+            <h2>Bag Type</h2>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Single (350/450ml)</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Double (350/450ml)</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Triple (350/450ml)</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Quadruple (450 ml) with inline filter</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Quadruple (450 ml) without inline filter</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Penta Bag (450 ml)</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Single Donor Plasma</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Apheresis Kits</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Triple (350 Ml) CPD/SAGM</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Triple (450 Ml) CPD/SAGM</label>
+            </div>
+            <h2>TTI Type</h2>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> HIV 1&2</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Hepatitis-B</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal">Hepatitis-C</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Syphilis</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="replacementExternal" name="componentType" value="replacementExternal">
+              <label for="replacementExternal"> Malaria</label>
+              </div>
+              <div class="button-container">
+                  <button type="submit" class="save-button">Save</button>
+                  <button type="reset" class="cancel-button">Cancel</button>
+                </div> 
+</section>
+</form>
+</body>
+</html>
+<script>
+  function openTab(evt, tabName) {
+    var i, tabContent, tab;
+
+    tabContent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+
+    tab = document.getElementsByClassName("tab");
+    for (i = 0; i < tab.length; i++) {
+      tab[i].className = tab[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  const form = document.querySelector('.form')
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const { email, password, region, district, bloodBankName, contact } = e.target
+  
+    fetch('http://localhost:4000/auth/bank-register', {
+      method: 'post',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+        region: region.value,
+        district: district.value,
+        bloodBankName: bloodBankName.value,
+        contact: contact.value
+      })
+    })
+    .then(res => {
+      window.location.replace('regContent.html')
+    })
+    .catch(err => console.log(err))
+  })
+</script>  
+<style>
+  .signinform > form > input {
+    padding: 1em 1em 1em 1em;
+    margin-inline: 1em;
+    width: 30%;
+    padding-right: px;
+  }
+  .scroll-navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(244, 242, 240);
+    color: #fff;
+    padding: 5px;
+  }
+  .logo img {
+    width: 90px;
+    height: 90px;
+    justify-content: left;
+}
+  .scroll-navbar a {
+    color: black;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+  }
+
+  /* Styles for the navbar */
+  header {
+    background-color: #f4f2f0;
+    height: 55px;
+  }
+
+  nav {
+    font-size: medium;
+  }
+
+  /* Styles for the Blood Bank Details section */
+  section {
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .tab-bar {
+    display: flex;
+  }
+
+  .tab {
+    flex: 1;
+    background-color: #f3eeee;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .tab.active {
+    background-color: #eb0808;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  /* Styles for each tab content */
+  #bloodBankInfo {
+    display: block;
+  }
+
+  /* Additional styles for responsive layout */
+  @media (max-width: 768px) {
+    .tab-bar {
+      flex-direction: column;
+    }
+
+    .tab {
+      flex: none;
+    }
+  }
+
+  .container1 {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  .select-container {
+    flex-grow: 1;
+    margin-right: 10px;
+    align-items: center;
+    width: 50%;
+  }
+
+  .date-container {
+    width: 200px;
+    position: relative;
+    align-items: center;
+  }
+
+  .select-dropdown {
+    width: 100%;
+    padding: 5px;
+    align-items: center;
+    width: 50%;
+  }
+
+  /* Styles for the form */
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-column {
+    flex: 1;
+    padding: 10px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for the select dropdown */
+  .select-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .select-dropdown {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .select-container::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* Styles for the tabs */
+  .tab-bar {
+    display:
+
+ flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 10px 20px;
+    background-color: #f3eeee;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .tab.active {
+    background-color: #eb0808;
+    color: white;
+  }
+
+  .content-container {
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  /* Styles for the checkboxes */
+  .checkbox-container {
+    margin-bottom: 5px;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .checkbox-container {
+display: inline-flex;
+align-items: center;
+margin-right: 10px;
+}
+.remark-container {
+margin-bottom: 20px;
+}
+
+.remark-container label {
+display: block;
+margin-bottom: 5px;
+}
+
+.remark-container textarea {
+width: 100%;
+height: 100px;
+padding: 5px;
+}
+
+.button-container {
+text-align: center;
+}
+
+.button-container button {
+margin-left: 10px;
+padding: 5px 10px;
+background-color: #eb0808;
+color: #fff;
+border: none;
+cursor: pointer;
+}
+
+.button-container button:hover {
+background-color: #c70606;
+}
+
+</style>

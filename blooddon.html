@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin</title>
+  <!-- Custom CSS File -->
+  <link rel="stylesheet" href="blooddon.css">
+  <!-- jQuery Library -->
+  <script src="blooddon.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<header>
+    <nav class="scroll-navbar">
+        <div class="left-section">
+            <a href="home.html">Home</a>
+            <a href="home.html #services">Services</a>
+            <a href="#">About Us</a>
+            
+        </div>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="content">
+                <header>Blood Donation Form</header>
+                <p class="small-text">Confidential - Please answer the following questions correctly. This<br>
+                    would help to protect you and the patient who receives the blood.</p>
+                      <div class="other-contents">
+                <div class="question">
+                    What is your blood type?<br><br>
+                  <div class="blood-types">
+                    <div class="column">
+                      <label><input type="checkbox">A+</label>
+                      <label><input type="checkbox">B+</label>
+                      <label><input type="checkbox">AB+</label>
+                      <label><input type="checkbox">O+</label>
+                    </div>
+                    <div class="column">
+                      <label><input type="checkbox">A-</label>
+                      <label><input type="checkbox">B-</label>
+                      <label><input type="checkbox">AB-</label>
+                      <label><input type="checkbox">O-</label>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        
+
+                <div class="question">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name">
+                </div>
+
+                <div class="question">
+                    <label for="birthdate">Birthdate:</label>
+                    <select name="year"></select>
+                            <select name="month">
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Apr</option>
+                                <option value="5">May</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select>
+<select name="day"></select>
+<script>var ysel = document.getElementsByName("year")[0],
+    msel = document.getElementsByName("month")[0],
+    dsel = document.getElementsByName("day")[0];
+for (var i = 2000; i >= 1950; i--) {
+    var opt = new Option();
+    opt.value = opt.text = i;
+    ysel.add(opt);
+}
+ysel.addEventListener("change", validate_date);
+msel.addEventListener("change", validate_date);
+
+function validate_date() {
+    var y = +ysel.value, m = msel.value, d = dsel.value;
+    if (m === "2")
+        var mlength = 28 + (!(y & 3) && ((y % 100) !== 0 || !(y & 15)));
+    else var mlength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
+    dsel.length = 0;
+    for (var i = 1; i <= mlength; i++) {
+        var opt = new Option();
+        opt.value = opt.text = i;
+        if (i == d) opt.selected = true;
+        dsel.add(opt);
+    }
+}
+validate_date();
+</script>
+
+
+
+                <div class="question">
+                    <label for="gender">Gender:</label>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+
+                <div class="question">
+                    <label for="occupation">Occupation:</label>
+                    <input type="text" id="occupation" name="occupation">
+                </div>
+
+                <div class="question">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="question">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                </div>
+
+                <div class="question">
+                    <label for="street-address">Street Address:</label>
+                    <input type="text" id="street-address" name="street-address">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+                </div>
+
+                <div class="question">
+                    <label for="weight">Weight:</label>
+                    <input type="text" id="weight" name="weight">
+                    <label for="pulse">Pulse:</label>
+                    <input type="text" id="pulse" name="pulse">
+                </div>
+
+                <div class="question">
+                    <label for="hb">HB:</label>
+                    <input type="text" id="hb" name="hb">
+                    <label for="bb">BB:</label>
+                    <input type="text" id="bb" name="bb">
+                </div>
+
+                <div class="question">
+                    <label for="temperature">Temperature:</label>
+                    <input type="text" id="temperature" name="temperature">
+                    <label for="donated-previously">Have you donated previously?</label>
+                    <label><input type="radio" name="donated-previously" value="yes"> Yes</label>
+                    <label><input type="radio" name="donated-previously" value="no"> No</label>
+                </div>
+
+                <div class="question">
+                    <label for="last-donation">What was the last time you donated?</label>
+                    <input type="text" id="last-donation" name="last-donation" class="calendar-dropdown">
+                </div>
+
+                <div class="question">
+                    <p>In the last six months, have you had any of the following?</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="tattooing"> Tattooing</label>
+                        <label><input type="checkbox" name="ear-piercing"> Ear Piercing</label>
+                        <label><input type="checkbox" name="dental-extraction"> Dental Extraction</label>
+                    </div>
+                </div>
+
+                <input type="button" value="Submit" class="button">
+            </div>
+        </div>
+
+        
+            
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background: rgb(244, 242, 240);
+      margin: 0;
+      padding: 0;
+      background-image: url(bg.png);
+      background-repeat: no-repeat;
+    }
+    .scroll-navbar {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        height: 50px;
+      }
+      
+      .scroll-navbar {
+        display: flex;
+        align-items: center;
+        background-color: rgb(244, 242, 240);
+        color: #fff;
+        padding: 5px;
+      }
+    
+      .scroll-navbar a {
+        color: black;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      
+      .content {
+        flex: 1 1 auto;
+      }
+      .content .p{
+        font-size: small;
+      }
+    .container {
+      position: absolute;
+      top: 130%;
+      left: 60%;
+      transform: translate(-50%,-50%);
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      border-radius: 7px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .form {
+      padding: 2rem;
+    }
+    .form .small-text{
+       font-size: small;
+       text-align: center;
+    }
+
+
+    .form header {
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form .question {
+     
+      padding: 10px;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form .blood-types {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form .blood-types .column {
+      width: 48%;
+    }
+
+    .form .blood-types label {
+      display: block;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form .blood-types label:hover {
+      background-color: #f9f9f9;
+    }
+
+    .form input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .form input.button {
+      color: #040404;
+      background: rgb(244, 242, 240);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-top: 1.7rem;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .form input.button:hover {
+      background: red;
+    }
+    .form input[type="text"]#address{
+  width: 80%; /* Adjust the width as needed */
+}
+
+  
+  
+</style>

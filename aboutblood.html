@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="inside.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ </head>
+ 
+    <body>
+      <div class="navbar">
+      <a href="home.html">Home</a>
+      <a href="home.html #services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#gallery">Gallery</a>
+      <div class="dropdown">
+        <button class="dropbtn">Looking for Blood</button>
+        <div class="dropdown-content">
+          <a href="bloodavail.html">Blood Availability</a>
+          <a href="blooddir.html">Blood Bank directory</a>
+         
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Want to Donate Blood</button>
+        <div class="dropdown-content">
+          <a href="camps.html">Blood Donation Camps</a>
+          <a href="aboutblood(m).html">About Blood Donation</a>
+       
+        </div>
+      </div>
+    </div>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="main2.jpg" alt="Image">
+      </div>
+      <div class="slide">
+        <img src="main1.jpg" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="image3.jpg" alt="Image 3">
+      </div>
+    </div>
+  
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      var slides = document.querySelectorAll('.slide');
+      var currentSlide = 0;
+    
+      function showSlide(slideIndex) {
+        slides[currentSlide].classList.remove('active');
+        slides[slideIndex].classList.add('active');
+        currentSlide = slideIndex;
+      }
+    
+      function nextSlide() {
+        var nextSlideIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextSlideIndex);
+      }
+    
+      setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    });
+    </script>
+    <header>
+        <h2>LEARN ABOUT DONATION</h2>
+      </header>
+    
+      <div class="container">
+        <div class="left-section">
+          <img src="back007.gif" alt="Blood Donation">
+          <p><h6>After donating blood, the body works to replenish the blood loss. This stimulates the<br>
+            production of new blood cells and in turn, helps in maintaining good health.</h6></p>
+        </div>
+    
+        <div class="right-section">
+          <h2>Compatible Blood Type Donors</h2>
+          <table>
+            <tr>
+              <th>Blood Type</th>
+              <th>Donate Blood To</th>
+              <th>Receive Blood From</th>
+            </tr>
+            <tr>
+              <td><p style="color: red;"> A+</p></td>
+              <td>A+ AB+</td>
+              <td>A+ A- O+ O-</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> O+</p></td>
+              <td>O+ A+ B+ AB+</td>
+              <td>O+ O-</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> B+</p></td>
+              <td>B+ AB+</td>
+              <td>B+ B- O+ O-</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> AB+</p></td>
+              <td>AB+</td>
+              <td>Everyone</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> A-</p></td>
+              <td>A+ A- AB+ AB-</td>
+              <td>A- O-</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> O-</p></td>
+              <td>Everyone</td>
+              <td>O-</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> B-</p></td>
+              <td>B+ B- AB+ AB-</td>
+              <td>B- O-</td>
+            </tr>
+            <tr>
+               <td><p style="color: red;"> AB-</p></td>
+              <td>AB+ AB-</td>
+              <td>AB- A- B- O-</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </body>
+    </html>
+   <style>
+    
+/* CSS for the navigation bar */
+
+  
+.navbar {
+  overflow: hidden;
+  background-color: #eceaea;
+}
+
+.navbar a {
+  float: left;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: rgb(9, 4, 4);
+  padding: 14px 16px;
+  margin-right: 20px;
+  background-color: inherit;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  header {
+    background-color: #eceaea;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .left-section {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .left-section img {
+    width: 200%;
+    max-width: 500px;
+    height: auto;
+  }
+  .left-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5px;
+
+  }
+  
+  .left-section h6 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+  }
+  
+  
+  .right-section {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #eceaea;
+  }
+  
+   </style>
+ 
+
+   
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<head>
+    <title>Blood Camp Schedule</title>
+    <style>
+    body{
+        background-image: url(pishur.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+        .navbar {
+            background-color: rgb(249, 247, 245);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            float: left;
+            color: #0a0909;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Dropdown button */
+        .dropbtn {
+            font-size: 16px;
+            float: right;
+            border: none;
+            outline: none;
+            color: rgb(9, 4, 4);
+            padding: 14px 16px;
+            margin-left: 20px;
+            background-color: inherit;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+
+        /* Dropdown container */
+        .dropdown {
+            float: right;
+            overflow: hidden;
+            padding-top: 10px;
+        }
+
+        /* Dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f8f0f0;
+            width: 200px;
+            z-index: 1;
+        }
+
+        /* Show dropdown content on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .header {
+            background-color: rgb(249, 247, 245);
+            color: #060505;
+            padding: 10px;
+            text-align: center;
+            margin-top: 0%;
+            
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: fit-content;
+            padding-left: 25%;
+        }
+
+        .select-container {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .date-container {
+            width: 200px;
+        }
+
+        .select-dropdown {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .search-button {
+            background-color: #851d00;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            
+        }
+
+        thead {
+            background: red;
+        }
+
+        tbody {
+            background: white;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 1em;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80vw;
+            margin: auto;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="home.html #services">Services</a>
+        <a href="#about">About Us</a>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Looking for Blood</button>
+          <div class="dropdown-content">
+            <a href="bloodavail.html">Blood Availability</a>
+            <a href="blooddir.html">Blood Bank Directory</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Want to Donate Blood</button>
+          <div class="dropdown-content">
+            <a href="camps.html">Blood Donation Camps</a>
+            <a href="aboutblood.html">About Blood Donation</a>
+          </div>
+        </div>
+    </div>
+    <div class="header">
+        <h1>Camp Schedule</h1>
+    </div>
+    <form class="container">
+        <div class="select-container">
+            <label for="state">Select Region:</label>
+            <select id="state" name="region" class="select-dropdown">
+                <option value="all">All Regions</option>
+                <option value="Greater-Accra">Greater Accra</option>
+                <option value="volta">volta</option>
+                <option value="Ashanti">Ashanti</option>
+                <option value="Central">Central</option>
+              >
+            </select>
+        </div>
+        <div class="select-container">
+            <label for="district">Select District:</label>
+            <select name="district" id="district" class="select-dropdown">
+                <option value="all">All Districts</option>
+                <option value="Ablekuma-Central-Municipal">Ablekuma Central Municipal</option>
+                <option value="Korle-Klottey-Municipal">Korle-Klottey Municipal</option>
+                <option value="Ablekuma-Central-Municipal">Ablekuma Central Municipal</option>
+                <option value="Adaklu-Anyigbe">Adaklu Anyigbe</option>
+                <option value="North-Tongu">North Tongu</option>
+                <option value="Adansi-North">Adansi North</option>
+                <option value="Kumasi-Metropolitan">Kumasi Metropolitan</option>
+                <option value="CapeCoast-Metropolitan-Assembly">Cape Coast Metropolitan Assembly</option>
+                <option value="Gomoa-District">Gomoa District</option>
+            </select>
+        </div>
+            <button class="search-button" type="submit" >Search</button>
+    </form>
+
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>BLOOD BANK NAME</th>
+                <th>DISTRICT</th>
+                <th>REGION</th>
+                <th>CONTACT</th>
+            </thead>
+            <tbody class="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.querySelector('.container')
+        const table = document.querySelector('.tbody')
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            fetch(`http://localhost:4000/my-banks/banks?region=${e.target.region.value}&district=${e.target.district.value}`)
+            .then(res => res.json())
+            .then(res => {
+                table.innerHTML = ''
+                for(let i = 0; i < res.banks.length; i++){
+                    table.innerHTML += `<tr>
+                        <td>${res.banks[i]._id}</td>
+                        <td>${res.banks[i].bloodBankName}</td>
+                        <td>${res.banks[i].district}</td>
+                        <td>${res.banks[i].region}</td>
+                        <td>${res.banks[i].contact}</td>
+                        </tr>`
+                }
+            })
+            .catch(err => console.log(err))
+        })
+    </script>
+</body>
+</html>
